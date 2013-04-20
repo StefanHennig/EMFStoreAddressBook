@@ -36,7 +36,7 @@
     <children xmi:type="notation:Node" xmi:id="_4qtrkKmhEeKLBPyklIHDag" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_4quSoKmhEeKLBPyklIHDag" type="5001">
       <children xmi:type="notation:Node" xmi:id="_gtutAKmsEeKWW9Vi_kGq7w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="addressbook.ecore#//Person/title"/>
+        <element xmi:type="ecore:EAttribute" href="addressbook.ecore#//Person/Title"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_gtutAamsEeKWW9Vi_kGq7w"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_4quSoamhEeKLBPyklIHDag"/>
@@ -120,7 +120,7 @@
     <children xmi:type="notation:Node" xmi:id="_yU9CYKmsEeKWW9Vi_kGq7w" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_yU9CYamsEeKWW9Vi_kGq7w" type="5001">
       <children xmi:type="notation:Node" xmi:id="_zoLk0KmsEeKWW9Vi_kGq7w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="addressbook.ecore#//Relationship/type"/>
+        <element xmi:type="ecore:EAttribute" href="addressbook.ecore#//Relationship/Type"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_zoLk0amsEeKWW9Vi_kGq7w"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_yU9CYqmsEeKWW9Vi_kGq7w"/>
