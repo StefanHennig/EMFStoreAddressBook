@@ -187,6 +187,29 @@ public class AddressbookItemProviderAdapterFactory extends AddressbookAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link addressbook.Note} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NoteItemProvider noteItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link addressbook.Note}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNoteAdapter() {
+		if (noteItemProvider == null) {
+			noteItemProvider = new NoteItemProvider(this);
+		}
+
+		return noteItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,6 +313,7 @@ public class AddressbookItemProviderAdapterFactory extends AddressbookAdapterFac
 		if (addressBookItemProvider != null) addressBookItemProvider.dispose();
 		if (addressItemProvider != null) addressItemProvider.dispose();
 		if (relationshipItemProvider != null) relationshipItemProvider.dispose();
+		if (noteItemProvider != null) noteItemProvider.dispose();
 	}
 
 }

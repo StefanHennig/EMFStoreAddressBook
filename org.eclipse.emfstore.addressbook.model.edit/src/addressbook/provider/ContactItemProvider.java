@@ -219,6 +219,7 @@ public class ContactItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(AddressbookPackage.Literals.CONTACT__ADDRESS);
 			childrenFeatures.add(AddressbookPackage.Literals.CONTACT__RELATES);
+			childrenFeatures.add(AddressbookPackage.Literals.CONTACT__NOTE);
 		}
 		return childrenFeatures;
 	}
@@ -270,6 +271,7 @@ public class ContactItemProvider
 				return;
 			case AddressbookPackage.CONTACT__ADDRESS:
 			case AddressbookPackage.CONTACT__RELATES:
+			case AddressbookPackage.CONTACT__NOTE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -296,6 +298,11 @@ public class ContactItemProvider
 			(createChildParameter
 				(AddressbookPackage.Literals.CONTACT__RELATES,
 				 AddressbookFactory.eINSTANCE.createRelationship()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AddressbookPackage.Literals.CONTACT__NOTE,
+				 AddressbookFactory.eINSTANCE.createNote()));
 	}
 
 	/**

@@ -62,6 +62,7 @@ public class AddressbookFactoryImpl extends EFactoryImpl implements AddressbookF
 			case AddressbookPackage.ADDRESS_BOOK: return createAddressBook();
 			case AddressbookPackage.ADDRESS: return createAddress();
 			case AddressbookPackage.RELATIONSHIP: return createRelationship();
+			case AddressbookPackage.NOTE: return createNote();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -77,6 +78,8 @@ public class AddressbookFactoryImpl extends EFactoryImpl implements AddressbookF
 		switch (eDataType.getClassifierID()) {
 			case AddressbookPackage.RELATIONSHIP_TYPE:
 				return createRelationshipTypeFromString(eDataType, initialValue);
+			case AddressbookPackage.NOTE_TYPE:
+				return createNoteTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -92,6 +95,8 @@ public class AddressbookFactoryImpl extends EFactoryImpl implements AddressbookF
 		switch (eDataType.getClassifierID()) {
 			case AddressbookPackage.RELATIONSHIP_TYPE:
 				return convertRelationshipTypeToString(eDataType, instanceValue);
+			case AddressbookPackage.NOTE_TYPE:
+				return convertNoteTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -152,6 +157,16 @@ public class AddressbookFactoryImpl extends EFactoryImpl implements AddressbookF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Note createNote() {
+		NoteImpl note = new NoteImpl();
+		return note;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RelationshipType createRelationshipTypeFromString(EDataType eDataType, String initialValue) {
 		RelationshipType result = RelationshipType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -164,6 +179,26 @@ public class AddressbookFactoryImpl extends EFactoryImpl implements AddressbookF
 	 * @generated
 	 */
 	public String convertRelationshipTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NoteType createNoteTypeFromString(EDataType eDataType, String initialValue) {
+		NoteType result = NoteType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNoteTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

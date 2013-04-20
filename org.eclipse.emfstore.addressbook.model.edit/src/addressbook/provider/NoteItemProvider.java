@@ -3,8 +3,8 @@
 package addressbook.provider;
 
 
-import addressbook.Address;
 import addressbook.AddressbookPackage;
+import addressbook.Note;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link addressbook.Address} object.
+ * This is the item provider adapter for a {@link addressbook.Note} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AddressItemProvider
+public class NoteItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class AddressItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddressItemProvider(AdapterFactory adapterFactory) {
+	public NoteItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,27 +60,28 @@ public class AddressItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCityPropertyDescriptor(object);
-			addStreetPropertyDescriptor(object);
-			addHouseNrPropertyDescriptor(object);
+			addAuthorPropertyDescriptor(object);
+			addTimePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the City feature.
+	 * This adds a property descriptor for the Author feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCityPropertyDescriptor(Object object) {
+	protected void addAuthorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Address_City_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Address_City_feature", "_UI_Address_type"),
-				 AddressbookPackage.Literals.ADDRESS__CITY,
+				 getString("_UI_Note_Author_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Note_Author_feature", "_UI_Note_type"),
+				 AddressbookPackage.Literals.NOTE__AUTHOR,
 				 true,
 				 false,
 				 false,
@@ -90,19 +91,19 @@ public class AddressItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Street feature.
+	 * This adds a property descriptor for the Time feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStreetPropertyDescriptor(Object object) {
+	protected void addTimePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Address_Street_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Address_Street_feature", "_UI_Address_type"),
-				 AddressbookPackage.Literals.ADDRESS__STREET,
+				 getString("_UI_Note_Time_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Note_Time_feature", "_UI_Note_type"),
+				 AddressbookPackage.Literals.NOTE__TIME,
 				 true,
 				 false,
 				 false,
@@ -112,19 +113,19 @@ public class AddressItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the House Nr feature.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHouseNrPropertyDescriptor(Object object) {
+	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Address_HouseNr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Address_HouseNr_feature", "_UI_Address_type"),
-				 AddressbookPackage.Literals.ADDRESS__HOUSE_NR,
+				 getString("_UI_Note_Type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Note_Type_feature", "_UI_Note_type"),
+				 AddressbookPackage.Literals.NOTE__TYPE,
 				 true,
 				 false,
 				 false,
@@ -134,14 +135,36 @@ public class AddressItemProvider
 	}
 
 	/**
-	 * This returns Address.gif.
+	 * This adds a property descriptor for the Comment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Note_Comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Note_Comment_feature", "_UI_Note_type"),
+				 AddressbookPackage.Literals.NOTE__COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Note.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Address"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Note"));
 	}
 
 	/**
@@ -152,10 +175,10 @@ public class AddressItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Address)object).getCity();
+		String label = ((Note)object).getAuthor();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Address_type") :
-			getString("_UI_Address_type") + " " + label;
+			getString("_UI_Note_type") :
+			getString("_UI_Note_type") + " " + label;
 	}
 
 	/**
@@ -169,10 +192,11 @@ public class AddressItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Address.class)) {
-			case AddressbookPackage.ADDRESS__CITY:
-			case AddressbookPackage.ADDRESS__STREET:
-			case AddressbookPackage.ADDRESS__HOUSE_NR:
+		switch (notification.getFeatureID(Note.class)) {
+			case AddressbookPackage.NOTE__AUTHOR:
+			case AddressbookPackage.NOTE__TIME:
+			case AddressbookPackage.NOTE__TYPE:
+			case AddressbookPackage.NOTE__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

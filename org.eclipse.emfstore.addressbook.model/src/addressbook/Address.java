@@ -84,12 +84,12 @@ public interface Address extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>House Nr</em>' attribute.
-	 * @see #setHouseNr(int)
+	 * @see #setHouseNr(String)
 	 * @see addressbook.AddressbookPackage#getAddress_HouseNr()
 	 * @model
 	 * @generated
 	 */
-	int getHouseNr();
+	String getHouseNr();
 
 	/**
 	 * Sets the value of the '{@link addressbook.Address#getHouseNr <em>House Nr</em>}' attribute.
@@ -99,6 +99,6 @@ public interface Address extends EObject {
 	 * @see #getHouseNr()
 	 * @generated
 	 */
-	void setHouseNr(int value);
+	void setHouseNr(String value);
 
 } // Address

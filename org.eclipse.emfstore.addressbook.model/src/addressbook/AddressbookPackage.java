@@ -103,7 +103,7 @@ public interface AddressbookPackage extends EPackage {
 	int CONTACT__EMAIL = 3;
 
 	/**
-	 * The feature id for the '<em><b>Address</b></em>' containment reference.
+	 * The feature id for the '<em><b>Address</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -139,13 +139,22 @@ public interface AddressbookPackage extends EPackage {
 	int CONTACT__IS_RELATED = 7;
 
 	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT__NOTE = 8;
+
+	/**
 	 * The number of structural features of the '<em>Contact</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTACT_FEATURE_COUNT = 8;
+	int CONTACT_FEATURE_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link addressbook.impl.PersonImpl <em>Person</em>}' class.
@@ -194,7 +203,7 @@ public interface AddressbookPackage extends EPackage {
 	int PERSON__EMAIL = CONTACT__EMAIL;
 
 	/**
-	 * The feature id for the '<em><b>Address</b></em>' containment reference.
+	 * The feature id for the '<em><b>Address</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -228,6 +237,15 @@ public interface AddressbookPackage extends EPackage {
 	 * @ordered
 	 */
 	int PERSON__IS_RELATED = CONTACT__IS_RELATED;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON__NOTE = CONTACT__NOTE;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -294,7 +312,7 @@ public interface AddressbookPackage extends EPackage {
 	int COMPANY__EMAIL = CONTACT__EMAIL;
 
 	/**
-	 * The feature id for the '<em><b>Address</b></em>' containment reference.
+	 * The feature id for the '<em><b>Address</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -328,6 +346,15 @@ public interface AddressbookPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPANY__IS_RELATED = CONTACT__IS_RELATED;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPANY__NOTE = CONTACT__NOTE;
 
 	/**
 	 * The feature id for the '<em><b>Industry</b></em>' attribute.
@@ -468,6 +495,61 @@ public interface AddressbookPackage extends EPackage {
 	int RELATIONSHIP_FEATURE_COUNT = 3;
 
 	/**
+	 * The meta object id for the '{@link addressbook.impl.NoteImpl <em>Note</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see addressbook.impl.NoteImpl
+	 * @see addressbook.impl.AddressbookPackageImpl#getNote()
+	 * @generated
+	 */
+	int NOTE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__AUTHOR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__TIME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__COMMENT = 3;
+
+	/**
+	 * The number of structural features of the '<em>Note</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_FEATURE_COUNT = 4;
+
+	/**
 	 * The meta object id for the '{@link addressbook.RelationshipType <em>Relationship Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -475,7 +557,18 @@ public interface AddressbookPackage extends EPackage {
 	 * @see addressbook.impl.AddressbookPackageImpl#getRelationshipType()
 	 * @generated
 	 */
-	int RELATIONSHIP_TYPE = 6;
+	int RELATIONSHIP_TYPE = 7;
+
+
+	/**
+	 * The meta object id for the '{@link addressbook.NoteType <em>Note Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see addressbook.NoteType
+	 * @see addressbook.impl.AddressbookPackageImpl#getNoteType()
+	 * @generated
+	 */
+	int NOTE_TYPE = 8;
 
 
 	/**
@@ -533,10 +626,10 @@ public interface AddressbookPackage extends EPackage {
 	EAttribute getContact_EMail();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link addressbook.Contact#getAddress <em>Address</em>}'.
+	 * Returns the meta object for the containment reference list '{@link addressbook.Contact#getAddress <em>Address</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Address</em>'.
+	 * @return the meta object for the containment reference list '<em>Address</em>'.
 	 * @see addressbook.Contact#getAddress()
 	 * @see #getContact()
 	 * @generated
@@ -575,6 +668,17 @@ public interface AddressbookPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getContact_IsRelated();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link addressbook.Contact#getNote <em>Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Note</em>'.
+	 * @see addressbook.Contact#getNote()
+	 * @see #getContact()
+	 * @generated
+	 */
+	EReference getContact_Note();
 
 	/**
 	 * Returns the meta object for class '{@link addressbook.Person <em>Person</em>}'.
@@ -726,6 +830,60 @@ public interface AddressbookPackage extends EPackage {
 	EReference getRelationship_Source();
 
 	/**
+	 * Returns the meta object for class '{@link addressbook.Note <em>Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Note</em>'.
+	 * @see addressbook.Note
+	 * @generated
+	 */
+	EClass getNote();
+
+	/**
+	 * Returns the meta object for the attribute '{@link addressbook.Note#getAuthor <em>Author</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Author</em>'.
+	 * @see addressbook.Note#getAuthor()
+	 * @see #getNote()
+	 * @generated
+	 */
+	EAttribute getNote_Author();
+
+	/**
+	 * Returns the meta object for the attribute '{@link addressbook.Note#getTime <em>Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time</em>'.
+	 * @see addressbook.Note#getTime()
+	 * @see #getNote()
+	 * @generated
+	 */
+	EAttribute getNote_Time();
+
+	/**
+	 * Returns the meta object for the attribute '{@link addressbook.Note#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see addressbook.Note#getType()
+	 * @see #getNote()
+	 * @generated
+	 */
+	EAttribute getNote_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link addressbook.Note#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see addressbook.Note#getComment()
+	 * @see #getNote()
+	 * @generated
+	 */
+	EAttribute getNote_Comment();
+
+	/**
 	 * Returns the meta object for enum '{@link addressbook.RelationshipType <em>Relationship Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -734,6 +892,16 @@ public interface AddressbookPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getRelationshipType();
+
+	/**
+	 * Returns the meta object for enum '{@link addressbook.NoteType <em>Note Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Note Type</em>'.
+	 * @see addressbook.NoteType
+	 * @generated
+	 */
+	EEnum getNoteType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -800,7 +968,7 @@ public interface AddressbookPackage extends EPackage {
 		EAttribute CONTACT__EMAIL = eINSTANCE.getContact_EMail();
 
 		/**
-		 * The meta object literal for the '<em><b>Address</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Address</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -830,6 +998,14 @@ public interface AddressbookPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTACT__IS_RELATED = eINSTANCE.getContact_IsRelated();
+
+		/**
+		 * The meta object literal for the '<em><b>Note</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTACT__NOTE = eINSTANCE.getContact_Note();
 
 		/**
 		 * The meta object literal for the '{@link addressbook.impl.PersonImpl <em>Person</em>}' class.
@@ -954,6 +1130,48 @@ public interface AddressbookPackage extends EPackage {
 		EReference RELATIONSHIP__SOURCE = eINSTANCE.getRelationship_Source();
 
 		/**
+		 * The meta object literal for the '{@link addressbook.impl.NoteImpl <em>Note</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see addressbook.impl.NoteImpl
+		 * @see addressbook.impl.AddressbookPackageImpl#getNote()
+		 * @generated
+		 */
+		EClass NOTE = eINSTANCE.getNote();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NOTE__AUTHOR = eINSTANCE.getNote_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NOTE__TIME = eINSTANCE.getNote_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NOTE__TYPE = eINSTANCE.getNote_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NOTE__COMMENT = eINSTANCE.getNote_Comment();
+
+		/**
 		 * The meta object literal for the '{@link addressbook.RelationshipType <em>Relationship Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -962,6 +1180,16 @@ public interface AddressbookPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum RELATIONSHIP_TYPE = eINSTANCE.getRelationshipType();
+
+		/**
+		 * The meta object literal for the '{@link addressbook.NoteType <em>Note Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see addressbook.NoteType
+		 * @see addressbook.impl.AddressbookPackageImpl#getNoteType()
+		 * @generated
+		 */
+		EEnum NOTE_TYPE = eINSTANCE.getNoteType();
 
 	}
 

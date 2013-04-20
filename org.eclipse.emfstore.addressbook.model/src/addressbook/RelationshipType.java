@@ -46,7 +46,15 @@ public enum RelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUBDIVISION(2, "Subdivision", "Subdivision");
+	SUBDIVISION(2, "Subdivision", "Subdivision"), /**
+	 * The '<em><b>Co Worker</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CO_WORKER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CO_WORKER(3, "CoWorker", "CoWorker");
 
 	/**
 	 * The '<em><b>Boss</b></em>' literal value.
@@ -94,6 +102,21 @@ public enum RelationshipType implements Enumerator {
 	public static final int SUBDIVISION_VALUE = 2;
 
 	/**
+	 * The '<em><b>Co Worker</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Co Worker</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #CO_WORKER
+	 * @model name="CoWorker"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CO_WORKER_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Relationship Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,6 +127,7 @@ public enum RelationshipType implements Enumerator {
 			BOSS,
 			EMPLOYEE,
 			SUBDIVISION,
+			CO_WORKER,
 		};
 
 	/**
@@ -157,6 +181,7 @@ public enum RelationshipType implements Enumerator {
 			case BOSS_VALUE: return BOSS;
 			case EMPLOYEE_VALUE: return EMPLOYEE;
 			case SUBDIVISION_VALUE: return SUBDIVISION;
+			case CO_WORKER_VALUE: return CO_WORKER;
 		}
 		return null;
 	}

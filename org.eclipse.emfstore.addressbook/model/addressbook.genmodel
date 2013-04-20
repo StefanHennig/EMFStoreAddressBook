@@ -10,6 +10,11 @@
       <genEnumLiterals ecoreEnumLiteral="addressbook.ecore#//RelationshipType/Employee"/>
       <genEnumLiterals ecoreEnumLiteral="addressbook.ecore#//RelationshipType/Subdivision"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="addressbook.ecore#//NoteType">
+      <genEnumLiterals ecoreEnumLiteral="addressbook.ecore#//NoteType/MEETING"/>
+      <genEnumLiterals ecoreEnumLiteral="addressbook.ecore#//NoteType/CALL"/>
+      <genEnumLiterals ecoreEnumLiteral="addressbook.ecore#//NoteType/EMAIL"/>
+    </genEnums>
     <genClasses image="false" ecoreClass="addressbook.ecore#//Contact">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute addressbook.ecore#//Contact/Name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute addressbook.ecore#//Contact/Phone"/>
@@ -19,6 +24,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference addressbook.ecore#//Contact/inRelation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference addressbook.ecore#//Contact/relates"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference addressbook.ecore#//Contact/isRelated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference addressbook.ecore#//Contact/Note"/>
     </genClasses>
     <genClasses ecoreClass="addressbook.ecore#//Person">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute addressbook.ecore#//Person/Title"/>
@@ -38,6 +44,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute addressbook.ecore#//Relationship/Type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference addressbook.ecore#//Relationship/target"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference addressbook.ecore#//Relationship/source"/>
+    </genClasses>
+    <genClasses ecoreClass="addressbook.ecore#//Note">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute addressbook.ecore#//Note/Author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute addressbook.ecore#//Note/Time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute addressbook.ecore#//Note/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute addressbook.ecore#//Note/Comment"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

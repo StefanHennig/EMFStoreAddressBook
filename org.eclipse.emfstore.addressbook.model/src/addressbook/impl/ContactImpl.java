@@ -5,6 +5,7 @@ package addressbook.impl;
 import addressbook.Address;
 import addressbook.AddressbookPackage;
 import addressbook.Contact;
+import addressbook.Note;
 import addressbook.Relationship;
 
 import java.util.Collection;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -41,6 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link addressbook.impl.ContactImpl#getInRelation <em>In Relation</em>}</li>
  *   <li>{@link addressbook.impl.ContactImpl#getRelates <em>Relates</em>}</li>
  *   <li>{@link addressbook.impl.ContactImpl#getIsRelated <em>Is Related</em>}</li>
+ *   <li>{@link addressbook.impl.ContactImpl#getNote <em>Note</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,14 +101,14 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 	protected EList<String> eMail;
 
 	/**
-	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference.
+	 * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAddress()
 	 * @generated
 	 * @ordered
 	 */
-	protected Address address;
+	protected EList<Address> address;
 
 	/**
 	 * The cached value of the '{@link #getInRelation() <em>In Relation</em>}' reference list.
@@ -136,6 +139,16 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 	 * @ordered
 	 */
 	protected EList<Relationship> isRelated;
+
+	/**
+	 * The cached value of the '{@link #getNote() <em>Note</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNote()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Note> note;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,42 +231,11 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Address getAddress() {
+	public EList<Address> getAddress() {
+		if (address == null) {
+			address = new EObjectContainmentEList<Address>(Address.class, this, AddressbookPackage.CONTACT__ADDRESS);
+		}
 		return address;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAddress(Address newAddress, NotificationChain msgs) {
-		Address oldAddress = address;
-		address = newAddress;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AddressbookPackage.CONTACT__ADDRESS, oldAddress, newAddress);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAddress(Address newAddress) {
-		if (newAddress != address) {
-			NotificationChain msgs = null;
-			if (address != null)
-				msgs = ((InternalEObject)address).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AddressbookPackage.CONTACT__ADDRESS, null, msgs);
-			if (newAddress != null)
-				msgs = ((InternalEObject)newAddress).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AddressbookPackage.CONTACT__ADDRESS, null, msgs);
-			msgs = basicSetAddress(newAddress, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AddressbookPackage.CONTACT__ADDRESS, newAddress, newAddress));
 	}
 
 	/**
@@ -297,6 +279,18 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Note> getNote() {
+		if (note == null) {
+			note = new EObjectContainmentEList<Note>(Note.class, this, AddressbookPackage.CONTACT__NOTE);
+		}
+		return note;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -318,11 +312,13 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AddressbookPackage.CONTACT__ADDRESS:
-				return basicSetAddress(null, msgs);
+				return ((InternalEList<?>)getAddress()).basicRemove(otherEnd, msgs);
 			case AddressbookPackage.CONTACT__RELATES:
 				return ((InternalEList<?>)getRelates()).basicRemove(otherEnd, msgs);
 			case AddressbookPackage.CONTACT__IS_RELATED:
 				return ((InternalEList<?>)getIsRelated()).basicRemove(otherEnd, msgs);
+			case AddressbookPackage.CONTACT__NOTE:
+				return ((InternalEList<?>)getNote()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -351,6 +347,8 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 				return getRelates();
 			case AddressbookPackage.CONTACT__IS_RELATED:
 				return getIsRelated();
+			case AddressbookPackage.CONTACT__NOTE:
+				return getNote();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -380,7 +378,8 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 				getEMail().addAll((Collection<? extends String>)newValue);
 				return;
 			case AddressbookPackage.CONTACT__ADDRESS:
-				setAddress((Address)newValue);
+				getAddress().clear();
+				getAddress().addAll((Collection<? extends Address>)newValue);
 				return;
 			case AddressbookPackage.CONTACT__IN_RELATION:
 				getInRelation().clear();
@@ -393,6 +392,10 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 			case AddressbookPackage.CONTACT__IS_RELATED:
 				getIsRelated().clear();
 				getIsRelated().addAll((Collection<? extends Relationship>)newValue);
+				return;
+			case AddressbookPackage.CONTACT__NOTE:
+				getNote().clear();
+				getNote().addAll((Collection<? extends Note>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -419,7 +422,7 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 				getEMail().clear();
 				return;
 			case AddressbookPackage.CONTACT__ADDRESS:
-				setAddress((Address)null);
+				getAddress().clear();
 				return;
 			case AddressbookPackage.CONTACT__IN_RELATION:
 				getInRelation().clear();
@@ -429,6 +432,9 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 				return;
 			case AddressbookPackage.CONTACT__IS_RELATED:
 				getIsRelated().clear();
+				return;
+			case AddressbookPackage.CONTACT__NOTE:
+				getNote().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -451,13 +457,15 @@ public abstract class ContactImpl extends EObjectImpl implements Contact {
 			case AddressbookPackage.CONTACT__EMAIL:
 				return eMail != null && !eMail.isEmpty();
 			case AddressbookPackage.CONTACT__ADDRESS:
-				return address != null;
+				return address != null && !address.isEmpty();
 			case AddressbookPackage.CONTACT__IN_RELATION:
 				return inRelation != null && !inRelation.isEmpty();
 			case AddressbookPackage.CONTACT__RELATES:
 				return relates != null && !relates.isEmpty();
 			case AddressbookPackage.CONTACT__IS_RELATED:
 				return isRelated != null && !isRelated.isEmpty();
+			case AddressbookPackage.CONTACT__NOTE:
+				return note != null && !note.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -76,7 +76,7 @@ public class AddressImpl extends EObjectImpl implements Address {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int HOUSE_NR_EDEFAULT = 0;
+	protected static final String HOUSE_NR_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getHouseNr() <em>House Nr</em>}' attribute.
@@ -86,7 +86,7 @@ public class AddressImpl extends EObjectImpl implements Address {
 	 * @generated
 	 * @ordered
 	 */
-	protected int houseNr = HOUSE_NR_EDEFAULT;
+	protected String houseNr = HOUSE_NR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +154,7 @@ public class AddressImpl extends EObjectImpl implements Address {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getHouseNr() {
+	public String getHouseNr() {
 		return houseNr;
 	}
 
@@ -163,8 +163,8 @@ public class AddressImpl extends EObjectImpl implements Address {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHouseNr(int newHouseNr) {
-		int oldHouseNr = houseNr;
+	public void setHouseNr(String newHouseNr) {
+		String oldHouseNr = houseNr;
 		houseNr = newHouseNr;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AddressbookPackage.ADDRESS__HOUSE_NR, oldHouseNr, houseNr));
@@ -203,7 +203,7 @@ public class AddressImpl extends EObjectImpl implements Address {
 				setStreet((String)newValue);
 				return;
 			case AddressbookPackage.ADDRESS__HOUSE_NR:
-				setHouseNr((Integer)newValue);
+				setHouseNr((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,7 +243,7 @@ public class AddressImpl extends EObjectImpl implements Address {
 			case AddressbookPackage.ADDRESS__STREET:
 				return STREET_EDEFAULT == null ? street != null : !STREET_EDEFAULT.equals(street);
 			case AddressbookPackage.ADDRESS__HOUSE_NR:
-				return houseNr != HOUSE_NR_EDEFAULT;
+				return HOUSE_NR_EDEFAULT == null ? houseNr != null : !HOUSE_NR_EDEFAULT.equals(houseNr);
 		}
 		return super.eIsSet(featureID);
 	}

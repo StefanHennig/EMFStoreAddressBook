@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link addressbook.Contact#getInRelation <em>In Relation</em>}</li>
  *   <li>{@link addressbook.Contact#getRelates <em>Relates</em>}</li>
  *   <li>{@link addressbook.Contact#getIsRelated <em>Is Related</em>}</li>
+ *   <li>{@link addressbook.Contact#getNote <em>Note</em>}</li>
  * </ul>
  * </p>
  *
@@ -105,30 +106,20 @@ public interface Contact extends EObject {
 	EList<String> getEMail();
 
 	/**
-	 * Returns the value of the '<em><b>Address</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Address</b></em>' containment reference list.
+	 * The list contents are of type {@link addressbook.Address}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Address</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Address</em>' containment reference.
-	 * @see #setAddress(Address)
+	 * @return the value of the '<em>Address</em>' containment reference list.
 	 * @see addressbook.AddressbookPackage#getContact_Address()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Address getAddress();
-
-	/**
-	 * Sets the value of the '{@link addressbook.Contact#getAddress <em>Address</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Address</em>' containment reference.
-	 * @see #getAddress()
-	 * @generated
-	 */
-	void setAddress(Address value);
+	EList<Address> getAddress();
 
 	/**
 	 * Returns the value of the '<em><b>In Relation</b></em>' reference list.
@@ -181,5 +172,21 @@ public interface Contact extends EObject {
 	 * @generated
 	 */
 	EList<Relationship> getIsRelated();
+
+	/**
+	 * Returns the value of the '<em><b>Note</b></em>' containment reference list.
+	 * The list contents are of type {@link addressbook.Note}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Note</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Note</em>' containment reference list.
+	 * @see addressbook.AddressbookPackage#getContact_Note()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Note> getNote();
 
 } // Contact
