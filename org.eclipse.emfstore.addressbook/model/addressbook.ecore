@@ -12,8 +12,16 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="address" eType="#//Address"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inRelation" upperBound="-1"
+        eType="#//Contact"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relates" upperBound="-1"
+        eType="#//Relationship" containment="true" eOpposite="#//Relationship/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isRelated" upperBound="-1"
+        eType="#//Relationship" eOpposite="#//Relationship/target"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="#//Contact"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="#//Contact">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Company" eSuperTypes="#//Contact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Industry" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -27,4 +35,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="HouseNr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="EDataType0"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RelationshipType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Contact" eOpposite="#//Contact/isRelated"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Contact" eOpposite="#//Contact/relates"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RelationshipType">
+    <eLiterals name="Boss"/>
+    <eLiterals name="Employee" value="1"/>
+    <eLiterals name="Subdivision" value="2"/>
+  </eClassifiers>
 </ecore:EPackage>
