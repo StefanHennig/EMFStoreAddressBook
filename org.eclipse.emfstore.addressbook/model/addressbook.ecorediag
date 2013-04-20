@@ -3,10 +3,6 @@
   <children xmi:type="notation:Node" xmi:id="_4qheUKmhEeKLBPyklIHDag" type="1001">
     <children xmi:type="notation:Node" xmi:id="_4qmW0KmhEeKLBPyklIHDag" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_4qozEKmhEeKLBPyklIHDag" type="5001">
-      <children xmi:type="notation:Node" xmi:id="_4qrPUKmhEeKLBPyklIHDag" type="2001">
-        <element xmi:type="ecore:EAttribute" href="addressbook.ecore#//Contact/Address"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_4qrPUamhEeKLBPyklIHDag"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_4qrPUqmhEeKLBPyklIHDag" type="2001">
         <element xmi:type="ecore:EAttribute" href="addressbook.ecore#//Contact/Name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_4qrPU6mhEeKLBPyklIHDag"/>
@@ -34,7 +30,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_4qheUamhEeKLBPyklIHDag" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="addressbook.ecore#//Contact"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qheUqmhEeKLBPyklIHDag" x="387" y="126"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qheUqmhEeKLBPyklIHDag" x="342" y="63"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4qtEgKmhEeKLBPyklIHDag" type="1001">
     <children xmi:type="notation:Node" xmi:id="_4qtrkKmhEeKLBPyklIHDag" type="4001"/>
@@ -50,7 +46,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_4qtEgamhEeKLBPyklIHDag" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="addressbook.ecore#//Person"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qtEgqmhEeKLBPyklIHDag" x="225" y="299"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qtEgqmhEeKLBPyklIHDag" x="288" y="218"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4qvgwKmhEeKLBPyklIHDag" type="1001">
     <children xmi:type="notation:Node" xmi:id="_4qwH0KmhEeKLBPyklIHDag" type="4001"/>
@@ -70,7 +66,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_4qvgwamhEeKLBPyklIHDag" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="addressbook.ecore#//Company"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qvgwqmhEeKLBPyklIHDag" x="387" y="299"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qvgwqmhEeKLBPyklIHDag" x="405" y="216"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4qx9AKmhEeKLBPyklIHDag" type="1001">
     <children xmi:type="notation:Node" xmi:id="_4qykEKmhEeKLBPyklIHDag" type="4001"/>
@@ -86,7 +82,35 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_4qx9AamhEeKLBPyklIHDag" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="addressbook.ecore#//AddressBook"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qx9AqmhEeKLBPyklIHDag" x="90" y="45"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4qx9AqmhEeKLBPyklIHDag" x="81" y="81"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_DtwFwKmjEeKWW9Vi_kGq7w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_Dtx68KmjEeKWW9Vi_kGq7w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_DtyiAKmjEeKWW9Vi_kGq7w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_FxBlEKmjEeKWW9Vi_kGq7w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="addressbook.ecore#//Address/City"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_FxBlEamjEeKWW9Vi_kGq7w"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_OZEY8KmjEeKWW9Vi_kGq7w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="addressbook.ecore#//Address/Street"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_OZEY8amjEeKWW9Vi_kGq7w"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_QSD64KmjEeKWW9Vi_kGq7w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="addressbook.ecore#//Address/HouseNr"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_QSD64amjEeKWW9Vi_kGq7w"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_DtyiAamjEeKWW9Vi_kGq7w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DtyiAqmjEeKWW9Vi_kGq7w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DtyiA6mjEeKWW9Vi_kGq7w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_DtzJEKmjEeKWW9Vi_kGq7w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_DtzJEamjEeKWW9Vi_kGq7w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DtzJEqmjEeKWW9Vi_kGq7w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DtzJE6mjEeKWW9Vi_kGq7w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_DtwFwamjEeKWW9Vi_kGq7w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="addressbook.ecore#//Address"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DtwFwqmjEeKWW9Vi_kGq7w" x="549" y="63"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_4qHOoamhEeKLBPyklIHDag"/>
   <element xmi:type="ecore:EPackage" href="addressbook.ecore#/"/>
@@ -94,7 +118,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_4q540amhEeKLBPyklIHDag" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_4q540qmhEeKLBPyklIHDag" fontName="Lucida Grande"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4q5406mhEeKLBPyklIHDag" points="[0, 0, -139, 60]$[0, -30, -139, 30]$[139, -30, 0, 30]$[139, -60, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4q5406mhEeKLBPyklIHDag" points="[-36, 0, -67, 60]$[-36, -20, -67, 40]$[58, -20, 27, 40]$[58, -60, 27, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4z3nkKmhEeKLBPyklIHDag" id="(0.5,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4z3nkamhEeKLBPyklIHDag" id="(0.24561403508771928,1.0)"/>
   </edges>
@@ -102,7 +126,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_4q8VEamhEeKLBPyklIHDag" routing="Rectilinear" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_4q8VEqmhEeKLBPyklIHDag" fontName="Lucida Grande"/>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4q8VE6mhEeKLBPyklIHDag" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4q8VE6mhEeKLBPyklIHDag" points="[-2, 0, 62, 58]$[-2, -18, 62, 40]$[-65, -18, -1, 40]$[-65, -58, -1, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4z4OoKmhEeKLBPyklIHDag" id="(0.4956521739130435,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4z41sKmhEeKLBPyklIHDag" id="(0.5,1.0)"/>
   </edges>
@@ -116,8 +140,21 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_4q9jMamhEeKLBPyklIHDag" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_4q9jMqmhEeKLBPyklIHDag" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="addressbook.ecore#//AddressBook/Contact"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4q9jM6mhEeKLBPyklIHDag" points="[0, 0, 141, 60]$[-141, -60, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4q9jM6mhEeKLBPyklIHDag" points="[50, 13, -243, -64]$[211, 55, -82, -22]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4z5cwKmhEeKLBPyklIHDag" id="(0.5,0.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4z5cwamhEeKLBPyklIHDag" id="(0.7456140350877193,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4z5cwamhEeKLBPyklIHDag" id="(0.04424778761061947,0.27835051546391754)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_ZdvAQKmjEeKWW9Vi_kGq7w" type="3002" source="_4qheUKmhEeKLBPyklIHDag" target="_DtwFwKmjEeKWW9Vi_kGq7w">
+    <children xmi:type="notation:Node" xmi:id="_ZdwOYKmjEeKWW9Vi_kGq7w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ZdwOYamjEeKWW9Vi_kGq7w" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Zdw1cKmjEeKWW9Vi_kGq7w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Zdw1camjEeKWW9Vi_kGq7w" x="-1" y="12"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_ZdvAQamjEeKWW9Vi_kGq7w" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ZdvAQqmjEeKWW9Vi_kGq7w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="addressbook.ecore#//Contact/address"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZdvAQ6mjEeKWW9Vi_kGq7w" points="[-17, 10, 242, -124]$[-208, 133, 51, -1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Zd0f0KmjEeKWW9Vi_kGq7w" id="(0.9823008849557522,0.32989690721649484)"/>
   </edges>
 </notation:Diagram>
